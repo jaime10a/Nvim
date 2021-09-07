@@ -2,10 +2,12 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-  --TODO
-  use 'neovim/nvim-lspconfig'
+  --Treesitter
+  use {
+  'nvim-treesitter/nvim-treesitter',
+  run = ':TSUpdate',
+  requires = 'romgrk/nvim-treesitter-context'
+  }
 
   --Telescope
   use 'nvim-lua/plenary.nvim'
@@ -21,7 +23,7 @@ return require('packer').startup(function()
   }
 
   --LSP
-  use 'neovim/nvim-lspconfig' --necessary to add other plugins
+  use 'neovim/nvim-lspconfig' --necessary to add language servers
 
   -- nvim-cmp, and buffer source as a dependency
   use {
@@ -45,5 +47,16 @@ return require('packer').startup(function()
   use {
     'hoob3rt/lualine.nvim',
     requires = {'kyazdani42/nvim-web-devicons', opt = true}
+  }
+
+  --GitSigns
+  use {
+  'lewis6991/gitsigns.nvim',
+  requires = {
+    'nvim-lua/plenary.nvim'
+    },
+  config = function()
+    require('gitsigns').setup()
+  end
   }
 end)
