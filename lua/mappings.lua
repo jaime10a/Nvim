@@ -22,11 +22,7 @@ mapper('n', '<leader>n', ':set rnu!<CR>')
 -- use ESC to turn off search highlighting
 mapper('n', '<Esc>', ':noh<CR>')
 
-<<<<<<< HEAD
 --Quit all Windows saving
-mapper('n', '<leader>q', ':wqa<cr>')
-
---Exit and Save all Windows
 mapper('n', '<leader>q', ':wqa<CR>')
 
 -- Switch Windows with arrows
