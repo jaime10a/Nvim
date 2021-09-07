@@ -22,8 +22,8 @@ mapper('n', '<leader>n', ':set rnu!<CR>')
 -- use ESC to turn off search highlighting
 mapper('n', '<Esc>', ':noh<CR>')
 
---Open Help veritcally
-mapper('n', '<leader>q', ':wqall<cr>')
+--Quit all Windows saving
+mapper('n', '<leader>q', ':wqa<cr>')
 
 -- Switch Windows with arrows
 mapper('n', '<Up>', ':wincmd k<CR>')
