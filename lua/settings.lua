@@ -17,6 +17,7 @@ b.shiftwidth = 4
 b.tabstop = 4
 b.smartindent = true
 
+--Lazyredraw
 o.lazyredraw = true
 
 --Split down with :split and right with :vsplit
@@ -32,5 +33,6 @@ o.scrolloff = 4
 --Mouse also works
 o.mouse ='a'
 
+vim.highlight.on_yank = true
 
 
