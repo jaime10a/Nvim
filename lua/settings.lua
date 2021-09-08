@@ -35,4 +35,20 @@ o.mouse ='a'
 
 vim.highlight.on_yank = true
 
+--Dont see -Insert
+o.showmode = false
 
+--Incremental Search
+o.incsearch = true
+
+--IgnorecAsE
+o.ignorecase = true
+
+--Search Highlight off
+o.hlsearch = false
+
+--Hidden Buffers
+o.hidden = true
+
+--Set undodir
+o.undodir = "~/.vim/undodir"
