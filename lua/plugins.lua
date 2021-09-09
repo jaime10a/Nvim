@@ -22,7 +22,7 @@ return require('packer').startup(function()
   end
   }
 
-  --LSP
+  --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
 
   -- nvim-cmp, and buffer source as a dependency
