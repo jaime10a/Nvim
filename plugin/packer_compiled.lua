@@ -95,6 +95,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/nord.nvim"
   },
+  ["nvim-autopairs"] = {
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/nvim-cmp"
