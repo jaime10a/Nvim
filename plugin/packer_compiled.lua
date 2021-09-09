@@ -83,6 +83,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/hop"
   },
+  ["lazygit.nvim"] = {
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/lualine.nvim"

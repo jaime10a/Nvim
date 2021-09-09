@@ -59,4 +59,8 @@ return require('packer').startup(function()
     require('gitsigns').setup()
   end
   }
+
+  --LazyGit
+  use 'kdheepak/lazygit.nvim'
+
 end)
