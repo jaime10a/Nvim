@@ -51,4 +51,7 @@ mapper('n', '<leader>j', ':HopWord<CR>')
 mapper('n', 't', ':NvimTreeToggle<CR>')
 
 -- LazyGIT
-mapper('n', '<Leader>gg', ':LazyGit<CR>')
+mapper('n', '<leader>gg', ':LazyGit<CR>')
+
+--LSPSaga
+mapper('n', '<leader>sh', ':Lspsaga hover_doc<CR>')

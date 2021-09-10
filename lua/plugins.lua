@@ -9,6 +9,13 @@ return require('packer').startup(function()
   requires = 'romgrk/nvim-treesitter-context'
   }
 
+  require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    },
+  }
+
   --Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
@@ -17,13 +24,14 @@ return require('packer').startup(function()
   use {
   'phaazon/hop.nvim', as = 'hop',
   config = function()
-    -- you can configure Hop the way you like here; see :h hop-config
-    require'hop'.setup { keys = 'asdfjklqweruiopvmc' }
+  require'hop'.setup { keys = 'asdfjklqweruiopvmc' }
   end
   }
 
   --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
+  use 'glepnir/lspsaga.nvim'
+  require('lspsaga').init_lsp_saga()
 
   -- nvim-cmp, and buffer source as a dependency
   use {
@@ -71,5 +79,8 @@ return require('packer').startup(function()
 
   --LazyGit
   use 'kdheepak/lazygit.nvim'
+
+  --Startify
+  use 'mhinz/vim-startify'
 
 end)

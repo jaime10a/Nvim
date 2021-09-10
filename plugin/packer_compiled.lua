@@ -87,6 +87,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/lazygit.nvim"
   },
+  ["lspsaga.nvim"] = {
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/lualine.nvim"
@@ -134,6 +138,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-startify"] = {
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/vim-startify"
   },
   ["vim-vsnip"] = {
     loaded = true,

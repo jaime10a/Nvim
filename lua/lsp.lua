@@ -10,4 +10,4 @@ require'lspconfig'.texlab.setup{}
 
 require'lspconfig'.clangd.setup{}
 
-require'lspconfig'.sumneko_lua.setup{}
+--require'lspconfig'.sumneko_lua.setup{}
