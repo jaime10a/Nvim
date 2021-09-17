@@ -19,6 +19,9 @@ return require('packer').startup(function()
   --Telescope
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
+  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  require('telescope').setup{extensions = fzf}
+  require('telescope').load_extension('fzf')
 
   --Hop
   use {
