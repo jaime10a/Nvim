@@ -83,7 +83,13 @@ return require('packer').startup(function()
   --LazyGit
   use 'kdheepak/lazygit.nvim'
 
-  --Startify
-  use 'mhinz/vim-startify'
+  --Startify Alpha-vim
+  use {
+    'goolord/alpha-nvim',
+    requires = { 'kyazdani42/nvim-web-devicons' },
+    config = function ()
+        require'alpha'.setup(require'alpha.themes.startify'.opts)
+    end
+}
 
 end)

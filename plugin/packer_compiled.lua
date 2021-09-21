@@ -69,6 +69,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["alpha-nvim"] = {
+    config = { "\27LJ\1\2^\0\0\3\0\5\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0027\1\4\1>\0\2\1G\0\1\0\topts\26alpha.themes.startify\nsetup\nalpha\frequire\0" },
+    loaded = true,
+    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/alpha-nvim"
+  },
   ["cmp-buffer"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/cmp-buffer"
@@ -143,10 +148,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/home/jaime/.local/share/nvim/site/pack/packer/start/vim-startify"
-  },
   ["vim-vsnip"] = {
     loaded = true,
     path = "/home/jaime/.local/share/nvim/site/pack/packer/start/vim-vsnip"
@@ -154,6 +155,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Config for: alpha-nvim
+time([[Config for alpha-nvim]], true)
+try_loadstring("\27LJ\1\2^\0\0\3\0\5\0\n4\0\0\0%\1\1\0>\0\2\0027\0\2\0004\1\0\0%\2\3\0>\1\2\0027\1\4\1>\0\2\1G\0\1\0\topts\26alpha.themes.startify\nsetup\nalpha\frequire\0", "config", "alpha-nvim")
+time([[Config for alpha-nvim]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
