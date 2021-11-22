@@ -28,7 +28,7 @@ o.splitright = true
 w.wrap = false
 
 --Lines above and below the cursor
-o.scrolloff = 4
+o.scrolloff = 16
 
 --Mouse also works
 o.mouse ='a'

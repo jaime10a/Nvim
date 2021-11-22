@@ -37,6 +37,8 @@ mapper('n', '<C-Down>', ':resize +2<CR>')
 mapper('n', '<C-Left>', ':vertical resize -2<CR>')
 mapper('n', '<C-Right>', ':vertical resize +2<CR>')
 
+--Go to File
+mapper('n', '<leader>gf', ':edit<cfile><CR>')
 
 -- Plugins Mappings ↓
 
