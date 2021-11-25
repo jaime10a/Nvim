@@ -26,7 +26,7 @@ mapper('n', '<Esc>', ':noh<CR>')
 mapper('n', '<leader>q', ':wqa<CR>')
 
 --Save
-mapper('n', '<leader>s', ':w<CR>')
+mapper('n', '<leader>w', ':w<CR>')
 
 -- Switch Windows with arrows
 mapper('n', '<Up>', ':wincmd k<CR>')
