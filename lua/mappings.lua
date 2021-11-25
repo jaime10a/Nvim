@@ -25,6 +25,9 @@ mapper('n', '<Esc>', ':noh<CR>')
 --Quit all Windows saving
 mapper('n', '<leader>q', ':wqa<CR>')
 
+--Save
+mapper('n', '<leader>s', ':w<CR>')
+
 -- Switch Windows with arrows
 mapper('n', '<Up>', ':wincmd k<CR>')
 mapper('n', '<Down>', ':wincmd j<CR>')
