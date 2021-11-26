@@ -34,14 +34,28 @@ return require('packer').startup(function()
   --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
 
-  -- nvim-cmp, and buffer source as a dependency
+  --Snippets vsnip
+  use"hrsh7th/cmp-vsnip"
+  use"hrsh7th/vim-vsnip"
+
+  -- nvim-cmp
   use {
   "hrsh7th/nvim-cmp",
-  requires = {
-    "hrsh7th/vim-vsnip",
-    "hrsh7th/cmp-buffer",
-     }
+  "hrsh7th/cmp-buffer",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/cmp-nvim-lua",
+  "hrsh7th/cmp-path",
   }
+
+  require'cmp'.setup({
+    snippet = {
+      -- REQUIRED - you must specify a snippet engine
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      end,
+    }
+  })
+  
 
   --AutoPairs
   use 'windwp/nvim-autopairs'
