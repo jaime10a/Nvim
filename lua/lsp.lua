@@ -10,4 +10,6 @@ require'lspconfig'.texlab.setup{}
 
 require'lspconfig'.clangd.setup{}
 
+require'lspconfig'.dartls.setup{cmd = { "dart", "/opt/flutter/bin/cache/dart-sdk/bin/snapshots/analysis_server.dart.snapshot", "--lsp" },}
+
 --require'lspconfig'.sumneko_lua.setup{}
