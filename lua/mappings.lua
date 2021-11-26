@@ -53,10 +53,14 @@ mapper('n', '<leader>ff', ':Telescope find_files<CR>')
 mapper('n', '<leader>j', ':HopWord<CR>')
 
 -- Tree
-mapper('n', 't', ':NvimTreeToggle<CR>')
+mapper('n', 't', ':NvimTreeFocus<CR>')
 
 -- LazyGIT
 mapper('n', '<leader>gg', ':LazyGit<CR>')
 
---LSPSaga
-mapper('n', '<leader>sh', ':Lspsaga hover_doc<CR>')
+--LSP
+mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
+mapper('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
+mapper('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
+
+mapper('n', 'ff', ':lua vim.lsp.buf.formatting_sync()<CR>')

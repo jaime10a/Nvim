@@ -33,8 +33,6 @@ return require('packer').startup(function()
 
   --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
-  use 'glepnir/lspsaga.nvim'
-  require('lspsaga').init_lsp_saga()
 
   -- nvim-cmp, and buffer source as a dependency
   use {
@@ -50,10 +48,13 @@ return require('packer').startup(function()
   require('nvim-autopairs').setup{}
 
   --Tree
+  --TODO: make it quit on open. quit_on_open option doesnt work 
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
-    config = function() require'nvim-tree'.setup {} end
+    config = function()
+    require'nvim-tree'.setup { auto_close = true}
+    end
   }
 
   --Theme (Nord)
