@@ -48,14 +48,12 @@ return require('packer').startup(function()
   "hrsh7th/cmp-cmdline",
   }
 
-  
-
   --AutoPairs
   use 'windwp/nvim-autopairs'
   require('nvim-autopairs').setup{}
 
   --Tree
-  --TODO: make it quit on open. quit_on_open option doesnt work 
+  --TODO: make it quit on open. quit_on_open option doesnt work. It is being migrated to an option in lua
   use {
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
@@ -66,6 +64,9 @@ return require('packer').startup(function()
 
   --Theme (Nord)
   use 'shaunsingh/nord.nvim'
+
+  --Theme Nightfox
+  use 'EdenEast/nightfox.nvim'
 
   --LuaLine
   use {
