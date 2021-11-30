@@ -46,8 +46,8 @@ mapper('n', '<leader>gf', ':edit<cfile><CR>')
 -- Plugins Mappings ↓
 
 -- Telescope
-mapper('n', '<leader>fg', ':Telescope live_grep<CR>')
-mapper('n', '<leader>ff', ':Telescope find_files<CR>')
+mapper('n', '<leader>g', ':Telescope live_grep<CR>')
+mapper('n', '<leader>f', ':Telescope find_files<CR>')
 
 -- Hop
 mapper('n', '<leader>j', ':HopWord<CR>')
