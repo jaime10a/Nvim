@@ -15,9 +15,6 @@ require('nightfox').setup{
 		keywords = "bold",
 		functions = "italic,bold"
 	},
-  	inverse = {
-    		visual = true, -- inverse the highlighting of match_parens
-  	}
 }
 
 --SetTheme
