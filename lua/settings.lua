@@ -47,8 +47,5 @@ o.ignorecase = true
 --Search Highlight off
 o.hlsearch = false
 
---Hidden Buffers
-o.hidden = true
-
 --Set undodir
 o.undodir = "~/.vim/undodir"
