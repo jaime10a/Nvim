@@ -65,7 +65,7 @@ mapper('n', ';t', ':Telescope<CR>')
 mapper('n', '<leader>j', ':HopWord<CR>')
 
 -- Tree
-mapper('n', 't', ':NvimTreeFocus<CR>')
+mapper('n', '<C-t>', ':NvimTreeFocus<CR>')
 
 -- LazyGIT
 mapper('n', '<leader>gg', ':LazyGit<CR>')
