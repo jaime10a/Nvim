@@ -1,6 +1,7 @@
-local o = vim.o  -- For the globals options
+local o = vim.o  -- For the globals options :set
 local w = vim.wo -- For the window local options
 local b = vim.bo -- For the buffer local options
+local g = vim.g -- For the buffer global options
 
 --Side Numbers
 o.relativenumber = true
