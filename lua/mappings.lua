@@ -55,8 +55,10 @@ mapper('n', '<leader>gf', ':edit<cfile><CR>')
 -- Plugins Mappings ↓
 
 -- Telescope
-mapper('n', '<leader>g', ':Telescope live_grep<CR>')
-mapper('n', '<leader>f', ':Telescope find_files<CR>')
+mapper('n', ';g', ':Telescope live_grep<CR>')
+mapper('n', ';f', ':Telescope find_files<CR>')
+mapper('n', ';b', ':Telescope buffers<CR>')
+mapper('n', ';t', ':Telescope<CR>')
 
 -- Hop
 mapper('n', '<leader>j', ':HopWord<CR>')
@@ -65,7 +67,7 @@ mapper('n', '<leader>j', ':HopWord<CR>')
 mapper('n', 't', ':NvimTreeFocus<CR>')
 
 -- LazyGIT
-mapper('n', '<leader>g', ':LazyGit<CR>')
+mapper('n', '<leader>gg', ':LazyGit<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
