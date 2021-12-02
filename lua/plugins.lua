@@ -52,6 +52,9 @@ return require('packer').startup(function()
   use 'windwp/nvim-autopairs'
   require('nvim-autopairs').setup{}
 
+  --Komentary
+  use 'b3nj5m1n/kommentary'
+
   --Tree
   --TODO: make it quit on open. quit_on_open option doesnt work. It is being migrated to an option in lua
   use {

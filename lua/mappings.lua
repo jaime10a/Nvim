@@ -40,6 +40,15 @@ mapper('n', '<C-Down>', ':resize +2<CR>')
 mapper('n', '<C-Left>', ':vertical resize -2<CR>')
 mapper('n', '<C-Right>', ':vertical resize +2<CR>')
 
+--Tabs Managment
+mapper('n', 'tn', ':tabnew<CR>')
+mapper('n', 'tj', ':tabnext<CR>')
+mapper('n', 'tk', ':tabprev<CR>')
+mapper('n', 'tc', ':tabclose<CR>')
+
+--Quick Replace
+mapper('n', '<C-S>', ':%s/')
+
 --Go to File
 mapper('n', '<leader>gf', ':edit<cfile><CR>')
 
@@ -56,7 +65,7 @@ mapper('n', '<leader>j', ':HopWord<CR>')
 mapper('n', 't', ':NvimTreeFocus<CR>')
 
 -- LazyGIT
-mapper('n', '<leader>gg', ':LazyGit<CR>')
+mapper('n', '<leader>g', ':LazyGit<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')

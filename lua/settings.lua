@@ -3,19 +3,24 @@ local w = vim.wo -- For the window local options
 local b = vim.bo -- For the buffer local options
 
 --Side Numbers
-w.relativenumber = true
-w.number = true
+o.relativenumber = true
+o.number = true
+o.numberwidth = 4
+
+--Layout
+o.showtabline = 2
+o.colorcolumn = '80'
 
 --Clipboard works with system
 o.clipboard = "unnamedplus"
 
 --Indentation
-b.autoindent = true
-b.expandtab = true
-b.softtabstop = 4
-b.shiftwidth = 4
-b.tabstop = 4
-b.smartindent = true
+o.autoindent = true
+o.expandtab = true
+o.softtabstop = 4
+o.shiftwidth = 4
+o.tabstop = 4
+o.smartindent = true
 
 --Lazyredraw
 o.lazyredraw = true
@@ -28,7 +33,7 @@ o.splitright = true
 w.wrap = false
 
 --Lines above and below the cursor
-o.scrolloff = 16
+o.scrolloff = 10
 
 --Mouse also works
 o.mouse ='a'
