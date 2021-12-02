@@ -76,6 +76,9 @@ return require('packer').startup(function()
   --Theme Nightfox
   use 'EdenEast/nightfox.nvim'
 
+  -- Theme OneNord
+  use 'rmehri01/onenord.nvim'
+
   --LuaLine
   use {
     'hoob3rt/lualine.nvim',
