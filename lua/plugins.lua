@@ -106,6 +106,18 @@ return require('packer').startup(function()
     config = function ()
         require'alpha'.setup(require'alpha.themes.startify'.opts)
     end
-}
+  }
+
+  --Bufferline Tabs
+  use {
+    'akinsho/bufferline.nvim',
+    requires = 'kyazdani42/nvim-web-devicons',
+    }
+    require'bufferline'.setup {
+        options = {
+            diagnostics = "nvim_lsp",
+            offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+        }
+    }
 
 end)
