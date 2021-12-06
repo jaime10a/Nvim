@@ -22,6 +22,7 @@ return require('packer').startup(function()
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   require('telescope').setup{extensions = fzf}
   require('telescope').load_extension('fzf')
+  require('telescope').load_extension('projects')
 
   --Hop
   use {
@@ -66,7 +67,14 @@ return require('packer').startup(function()
     'kyazdani42/nvim-tree.lua',
     requires = 'kyazdani42/nvim-web-devicons',
     config = function()
-    require'nvim-tree'.setup { auto_close = true}
+    require'nvim-tree'.setup {
+        auto_close = true,
+        update_cwd = true,
+        update_focused_file = {
+            enable = true,
+            update_cwd = true
+        },
+    }
     end
   }
 
@@ -119,5 +127,14 @@ return require('packer').startup(function()
             offsets = {{filetype = "NvimTree", text = "File Explorer"}},
         }
     }
+
+   --Project.nvim
+   use {
+  "ahmedkhalf/project.nvim",
+  config = function()
+    require("project_nvim").setup {
+    }
+  end
+  }
 
 end)
