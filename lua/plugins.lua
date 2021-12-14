@@ -23,6 +23,7 @@ return require('packer').startup(function()
   require('telescope').setup{extensions = fzf}
   require('telescope').load_extension('fzf')
   require('telescope').load_extension('projects')
+  require('telescope').load_extension('cheat')
 
   --Hop
   use {
@@ -136,5 +137,9 @@ return require('packer').startup(function()
     }
   end
   }
+
+  --Cheat.nvim Telescope cheat.sh client (Need to manually create  $HOME/.local/share/nvim/databases directory)
+  use"tami5/sqlite.lua"
+  use"nvim-telescope/telescope-cheat.nvim"
 
 end)

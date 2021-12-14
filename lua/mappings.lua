@@ -63,6 +63,7 @@ mapper('n', ';b', ':Telescope buffers<CR>')
 mapper('n', ';s', ':Telescope git_status<CR>')
 mapper('n', ';p', ':Telescope projects<CR>')
 mapper('n', ';t', ':Telescope<CR>')
+mapper('n', ';c', ':Telescope cheat fd<CR>')
 
 -- Hop
 mapper('n', '<leader>j', ':HopWord<CR>')
