@@ -22,8 +22,6 @@ return require('packer').startup(function()
   use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
   require('telescope').setup{extensions = fzf}
   require('telescope').load_extension('fzf')
-  require('telescope').load_extension('projects')
-  require('telescope').load_extension('cheat')
 
   --Hop
   use {
@@ -88,6 +86,8 @@ return require('packer').startup(function()
   -- Theme OneNord
   use 'rmehri01/onenord.nvim'
 
+  -- Theme Gruvbox
+  use 'wittyjudge/gruvbox-material.nvim'
   --LuaLine
   use {
     'hoob3rt/lualine.nvim',
@@ -128,18 +128,4 @@ return require('packer').startup(function()
             offsets = {{filetype = "NvimTree", text = "File Explorer"}},
         }
     }
-
-   --Project.nvim
-   use {
-  "ahmedkhalf/project.nvim",
-  config = function()
-    require("project_nvim").setup {
-    }
-  end
-  }
-
-  --Cheat.nvim Telescope cheat.sh client (Need to manually create  $HOME/.local/share/nvim/databases directory)
-  use"tami5/sqlite.lua"
-  use"nvim-telescope/telescope-cheat.nvim"
-
 end)
