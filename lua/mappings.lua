@@ -42,13 +42,13 @@ mapper('n', '<C-Right>', ':vertical resize +2<CR>')
 
 --Tabs Managment
 mapper('n', 'tn', ':tabnew<CR>')
--- mapper('n', 'tj', ':tabnext<CR>')
--- mapper('n', 'tk', ':tabprev<CR>')
+mapper('n', 'tl', ':BufferLineCycleNext<CR>')
+mapper('n', 'th', ':BufferLineCyclePrev<CR>')
 -- mapper('n', 'tc', ':tabclose<CR>')
 mapper('n', 'tj', ':BufferLinePick<CR>')
 mapper('n', 'tc', ':BufferLinePickClose<CR>')
 
---Quick Replace
+--Quick Replace / Substitute
 mapper('n', '<C-S>', ':%s/')
 
 --Go to File
