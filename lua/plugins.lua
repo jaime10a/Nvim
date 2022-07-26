@@ -131,4 +131,8 @@ return require('packer').startup(function()
     --Github Copilot
     use "github/copilot.vim"
 
+    --Mason package manager
+    use { "williamboman/mason.nvim" }
+    require('mason').setup()
+
 end)
