@@ -26,7 +26,8 @@ require('onenord').setup({
 --SetTheme
 --require('onenord').setup()
 --require('nord').set()
-require('gruvbox-material').setup()
+--require('gruvbox-material').setup()
+vim.cmd("colorscheme oxocarbon")
 
 --LuaLine Config
 require('lualine').setup {

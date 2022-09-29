@@ -87,6 +87,8 @@ return require('packer').startup(function()
 
   -- Theme Gruvbox
   use 'wittyjudge/gruvbox-material.nvim'
+  -- Theme Oxocarbon
+ use {'shaunsingh/oxocarbon.nvim', run = './install.sh'} 
   --LuaLine
   use {
     'hoob3rt/lualine.nvim',
@@ -134,5 +136,8 @@ return require('packer').startup(function()
     --Mason package manager
     use { "williamboman/mason.nvim" }
     require('mason').setup()
+
+    --Latex Support
+    use 'lervag/vimtex'
 
 end)

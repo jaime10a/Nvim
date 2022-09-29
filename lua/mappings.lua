@@ -15,6 +15,7 @@ end
 
 -- Define Mapleader
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ","
 
 --  Toggle Numbers
 mapper('n', '<leader>n', ':set rnu!<CR>')
