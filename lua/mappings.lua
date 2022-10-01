@@ -70,7 +70,7 @@ mapper('n', ';c', ':Telescope cheat fd<CR>')
 mapper('n', '<leader>j', ':HopWord<CR>')
 
 -- Tree
-mapper('n', '<C-t>', ':NvimTreeFocus<CR>')
+mapper('n', '<leader>t', ':NvimTreeToggle<CR>')
 
 -- LazyGIT
 mapper('n', '<leader>gg', ':LazyGit<CR>')

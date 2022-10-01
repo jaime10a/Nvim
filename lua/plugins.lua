@@ -10,7 +10,8 @@ return require('packer').startup(function()
   }
 
   require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+  -- TODO Uncommented because of errors should un-uncomment and try again
+  -- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
   highlight = {
     enable = true,              -- false will disable the whole extension
     },
@@ -72,6 +73,7 @@ return require('packer').startup(function()
             enable = true,
             update_cwd = true
         },
+        nvim_tree_respect_buf_cwd = 1,
     }
     end
   }

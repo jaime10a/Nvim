@@ -55,8 +55,3 @@ o.hlsearch = false
 
 --Set undodir
 o.undodir = "~/.vim/undodir"
-
-
---Plugin Settings
---NvimTre
-g.nvim_tree_respect_buf_cwd = 1
