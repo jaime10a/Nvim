@@ -27,7 +27,9 @@ require('onenord').setup({
 --require('onenord').setup()
 --require('nord').set()
 --require('gruvbox-material').setup()
-vim.cmd("colorscheme oxocarbon")
+--vim.cmd("colorscheme oxocarbon")
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
+vim.api.nvim_command "colorscheme catppuccin"
 
 --LuaLine Config
 require('lualine').setup {

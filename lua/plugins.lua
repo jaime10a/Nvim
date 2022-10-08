@@ -73,7 +73,6 @@ return require('packer').startup(function()
             enable = true,
             update_cwd = true
         },
-        nvim_tree_respect_buf_cwd = 1,
     }
     end
   }
@@ -91,6 +90,15 @@ return require('packer').startup(function()
   use 'wittyjudge/gruvbox-material.nvim'
   -- Theme Oxocarbon
  use {'shaunsingh/oxocarbon.nvim', run = './install.sh'} 
+
+  use {
+	"catppuccin/nvim",
+	as = "catppuccin",
+	config = function()
+		require("catppuccin").setup()
+	end
+  }
+
   --LuaLine
   use {
     'hoob3rt/lualine.nvim',
