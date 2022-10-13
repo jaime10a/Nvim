@@ -32,6 +32,10 @@ return require('packer').startup(function()
   end
   }
 
+  --Leap
+  use 'ggandor/leap.nvim'
+  require('leap').set_default_keymaps()
+
   --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
 
