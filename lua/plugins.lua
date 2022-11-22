@@ -154,4 +154,15 @@ return require('packer').startup(function()
     --Latex Support
     use 'lervag/vimtex'
 
+    --Whichkey
+    -- Lua
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        require("which-key").setup {
+
+        }
+      end
+    }
+
 end)
