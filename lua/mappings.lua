@@ -80,7 +80,7 @@ mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 mapper('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
 mapper('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
 mapper('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
-mapper('n', 'ff', ':lua vim.lsp.buf.formatting_sync()<CR>')
+mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
 
 --Diagnostic
 mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
