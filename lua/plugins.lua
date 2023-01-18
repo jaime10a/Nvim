@@ -38,6 +38,11 @@ return require('packer').startup(function()
 
   --LSP (lsps are started in lsp.lua)
   use 'neovim/nvim-lspconfig' --necessary to add language servers
+  use 'williamboman/mason.nvim'
+  use 'williamboman/mason-lspconfig.nvim'
+    require("mason").setup()
+    require("mason-lspconfig").setup()
+
 
   --Snippets vsnip
   use"hrsh7th/cmp-vsnip"
