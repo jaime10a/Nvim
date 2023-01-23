@@ -117,19 +117,11 @@ require("lazy").setup({
     end
   },
 
-  --Theme (Nord)
-  'shaunsingh/nord.nvim',
-
   --Theme Nightfox
   'EdenEast/nightfox.nvim',
 
-  -- Theme OneNord
-  'rmehri01/onenord.nvim',
-
   -- Theme Gruvbox
   'wittyjudge/gruvbox-material.nvim',
-  -- Theme Oxocarbon
- {'shaunsingh/oxocarbon.nvim', build = './install.sh'},
 
   {
 	"catppuccin/nvim",
