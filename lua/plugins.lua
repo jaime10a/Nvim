@@ -1,80 +1,111 @@
-return require('packer').startup(function()
-  -- Packer can manage itself
-  use 'wbthomason/packer.nvim'
+-- bootstrap lazy.nvim
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+
+require("lazy").setup({
 
   --Treesitter
-  use {
+  {
   'nvim-treesitter/nvim-treesitter',
-  run = ':TSUpdate',
-  requires = 'romgrk/nvim-treesitter-context'
-  }
-
-  require'nvim-treesitter.configs'.setup {
-  -- TODO Uncommented because of errors should un-uncomment and try again
-  -- ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    },
-  }
+  build = ':TSUpdate',
+  dependencies = 'romgrk/nvim-treesitter-context',
+  config = function()
+      require'nvim-treesitter.configs'.setup {
+      -- TODO Uncommented because of errors should un-uncomment and try again
+      ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+      highlight = {
+        enable = true,              -- false will disable the whole extension
+        },
+      }
+  end
+  },
 
   --Telescope
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-telescope/telescope.nvim'
-  use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-  require('telescope').setup{extensions = fzf}
-  require('telescope').load_extension('fzf')
+  'nvim-lua/plenary.nvim',
+  'nvim-telescope/telescope.nvim',
+  {
+  'nvim-telescope/telescope-fzf-native.nvim',
+  build = 'make',
+  config = function()
+    require('telescope').setup{extensions = fzf }
+    require('telescope').load_extension('fzf')
+  end
+  },
 
   --Hop
-  use {
-  'phaazon/hop.nvim', as = 'hop',
-  config = function()
-  require'hop'.setup { keys = 'asdfjklqweruiopvmc' }
-  end
-  }
+  {
+    'phaazon/hop.nvim', name = 'hop',
+    config = function()
+    require'hop'.setup { keys = 'asdfjklqweruiopvmc' }
+    end
+  },
 
   --Leap
-  use 'ggandor/leap.nvim'
-  require('leap').set_default_keymaps()
+  {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').set_default_keymaps()
+    end
+    },
 
   --LSP (lsps are started in lsp.lua)
-  use 'neovim/nvim-lspconfig' --necessary to add language servers
-  use 'williamboman/mason.nvim'
-  use 'williamboman/mason-lspconfig.nvim'
-    require("mason").setup()
-    require("mason-lspconfig").setup()
+  'neovim/nvim-lspconfig', --necessary to add language servers
+  {
+    'williamboman/mason.nvim',
+    config = function()
+      require("mason").setup()
+    end
+  },
+  {
+      'williamboman/mason-lspconfig.nvim',
+      config = function()
+        require("mason-lspconfig").setup()
+      end
+  },
 
 
   --Snippets vsnip
-  use"hrsh7th/cmp-vsnip"
-  use"hrsh7th/vim-vsnip"
+  "hrsh7th/cmp-vsnip",
+  "hrsh7th/vim-vsnip",
 
   -- nvim-cmp
-  use {
+  {
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-buffer",
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/cmp-nvim-lua",
   "hrsh7th/cmp-path",
   "hrsh7th/cmp-cmdline",
-  }
+  },
 
   --AutoPairs
-  use 'windwp/nvim-autopairs'
-  require('nvim-autopairs').setup{}
+  'windwp/nvim-autopairs',
+  -- require('nvim-autopairs').setup{}
 
   --Comment.nvim
-  use {
+  {
     'numToStr/Comment.nvim',
     config = function()
         require('Comment').setup()
     end
-  }
+  },
 
   --Tree
   --TODO: make it quit on open. quit_on_open option doesnt work. It is being migrated to an option in lua
-  use {
+  {
     'kyazdani42/nvim-tree.lua',
-    requires = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'kyazdani42/nvim-web-devicons',
     config = function()
     require'nvim-tree'.setup {
         update_cwd = true,
@@ -84,90 +115,91 @@ return require('packer').startup(function()
         },
     }
     end
-  }
+  },
 
   --Theme (Nord)
-  use 'shaunsingh/nord.nvim'
+  'shaunsingh/nord.nvim',
 
   --Theme Nightfox
-  use 'EdenEast/nightfox.nvim'
+  'EdenEast/nightfox.nvim',
 
   -- Theme OneNord
-  use 'rmehri01/onenord.nvim'
+  'rmehri01/onenord.nvim',
 
   -- Theme Gruvbox
-  use 'wittyjudge/gruvbox-material.nvim'
+  'wittyjudge/gruvbox-material.nvim',
   -- Theme Oxocarbon
- use {'shaunsingh/oxocarbon.nvim', run = './install.sh'} 
+ {'shaunsingh/oxocarbon.nvim', build = './install.sh'},
 
-  use {
+  {
 	"catppuccin/nvim",
-	as = "catppuccin",
+	name = "catppuccin",
 	config = function()
 		require("catppuccin").setup()
 	end
-  }
+  },
 
   --LuaLine
-  use {
+  {
     'hoob3rt/lualine.nvim',
-    requires = {'kyazdani42/nvim-web-devicons', opt = true}
-  }
+    dependencies = {'kyazdani42/nvim-web-devicons', lazy = true}
+  },
 
   --GitSigns
-  use {
+  {
   'lewis6991/gitsigns.nvim',
-  requires = {
+  dependencies = {
     'nvim-lua/plenary.nvim'
     },
   config = function()
     require('gitsigns').setup()
   end
-  }
+  },
 
   --LazyGit
-  use 'kdheepak/lazygit.nvim'
+  'kdheepak/lazygit.nvim',
 
   --Startify Alpha-vim
-  use {
+  {
     'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
         require'alpha'.setup(require'alpha.themes.startify'.opts)
     end
-  }
+  },
 
   --Bufferline Tabs
-  use {
+  {
     'akinsho/bufferline.nvim',
-    requires = 'kyazdani42/nvim-web-devicons',
-    }
-    require'bufferline'.setup {
+    dependencies = 'kyazdani42/nvim-web-devicons',
+    config = function()
+      require'bufferline'.setup {
         options = {
-            diagnostics = "nvim_lsp",
-            offsets = {{filetype = "NvimTree", text = "File Explorer"}},
+          offsets = {{filetype = "NvimTree", text = "File Explorer"}},
         }
-    }
+      }
+    end
+  },
 
     --Github Copilot
-    use "github/copilot.vim"
+    "github/copilot.vim",
 
     --Mason package manager
-    use { "williamboman/mason.nvim" }
-    require('mason').setup()
+    { "williamboman/mason.nvim" },
+    -- require('mason').setup()
 
     --Latex Support
-    use 'lervag/vimtex'
+    'lervag/vimtex',
 
     --Whichkey
     -- Lua
-    use {
+    {
       "folke/which-key.nvim",
       config = function()
         require("which-key").setup {
 
         }
       end
-    }
+    },
 
-end)
+})
