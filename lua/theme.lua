@@ -7,7 +7,7 @@ vim.api.nvim_command "colorscheme catppuccin"
 --LuaLine Config
 require('lualine').setup {
   options = {
-    theme = 'onenord',
+    theme = 'auto',
     extensions = {'nvim-tree'}
   }
 }
