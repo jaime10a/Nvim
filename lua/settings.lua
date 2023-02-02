@@ -9,7 +9,7 @@ o.number = true
 o.numberwidth = 4
 
 --Layout
-o.showtabline = 2
+o.showtabline = 1
 o.colorcolumn = '80'
 
 --Clipboard works with system

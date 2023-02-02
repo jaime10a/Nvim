@@ -160,19 +160,6 @@ require("lazy").setup({
     end
   },
 
-  --Bufferline Tabs
-  {
-    'akinsho/bufferline.nvim',
-    dependencies = 'kyazdani42/nvim-web-devicons',
-    config = function()
-      require'bufferline'.setup {
-        options = {
-          offsets = {{filetype = "NvimTree", text = "File Explorer"}},
-        }
-      }
-    end
-  },
-
     --Github Copilot
     "github/copilot.vim",
 
