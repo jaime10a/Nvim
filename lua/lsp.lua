@@ -14,4 +14,4 @@ require'lspconfig'.rust_analyzer.setup{}
 
 require'lspconfig'.gopls.setup{}
 
-require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.lua_ls.setup{}
