@@ -79,4 +79,4 @@ mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 
 --CodeGPT (ChatGPT)
 mapper('n', '<leader>c', ':Chat ')
-mapper('v', '<leader>c', ':Chat ')
+mapper('v', '<leader>c', ':Chat ') --TODO print out all the default options(completion, code_edit, explain, doc, opt, tests, chat)
