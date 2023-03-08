@@ -76,3 +76,7 @@ mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
 
 --Diagnostic
 mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
+
+--CodeGPT (ChatGPT)
+mapper('n', '<leader>c', ':Chat ')
+mapper('v', '<leader>c', ':Chat ')

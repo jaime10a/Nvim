@@ -181,4 +181,10 @@ require("lazy").setup({
       end
     },
 
+    --CodeGPT
+    {
+        "nvim-lua/plenary.nvim",
+        "MunifTanjim/nui.nvim",
+        "dpayne/CodeGPT.nvim",
+    },
 })

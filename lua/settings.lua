@@ -31,7 +31,7 @@ o.splitbelow = true
 o.splitright = true
 
 --Wrapping off
-w.wrap = false
+o.wrap = false
 
 --Lines above and below the cursor
 o.scrolloff = 10
