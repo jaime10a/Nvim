@@ -1,30 +1,40 @@
 --SetTheme
 --require('gruvbox-material').setup()
-vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
-vim.api.nvim_command "colorscheme catppuccin"
 -- vim.api.nvim_command "colorscheme duskfox"
+--
+-- catppuccin
+require("catppuccin").setup({
+    flavour = "mocha", -- latte, frappe, macchiato, mocha
+    background = { -- :h background
+        light = "latte",
+        dark = "mocha",
+    },
+    transparent_background = true,
+    show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+    term_colors = false,
+    dim_inactive = {
+        enabled = false,
+        shade = "dark",
+        percentage = 0.95,
+    },
+    color_overrides = {},
+    custom_highlights = {},
+    integrations = {
+        cmp = true,
+        gitsigns = true,
+        nvimtree = true,
+        telescope = true,
+        -- For more (https://github.com/catppuccin/nvim#integrations)
+    },
+})
+
+-- setup must be called before loading
+vim.cmd.colorscheme "catppuccin"
 
 --LuaLine Config
 require('lualine').setup {
   options = {
-    theme = 'auto',
+    theme = 'catppuccin',
     extensions = {'nvim-tree'}
   }
 }
-
-
-function ColorMyPencils() --function from the Primeagen to color things
-    vim.opt.background = "dark"
-
-    local hl = function(thing, opts)
-        vim.api.nvim_set_hl(0, thing, opts)
-    end
-
-    hl("SignColumn", {
-        bg = "none",
-    })
-    hl("Normal", { -- makes background transparent
-        bg = "none"
-    })
-end
-ColorMyPencils()
