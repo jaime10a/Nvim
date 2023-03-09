@@ -13,7 +13,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
-require("lazy").setup({
+require("lazy").setup(
+--Plugins
+{
 
   --Treesitter
   {
@@ -185,6 +187,29 @@ require("lazy").setup({
     {
         "nvim-lua/plenary.nvim",
         "MunifTanjim/nui.nvim",
-        "dpayne/CodeGPT.nvim",
+        {"dpayne/CodeGPT.nvim", dev = false},
     },
+
+    --ChatGPT.nvim
+    {
+        'jackMort/ChatGPT.nvim',
+
+        config = function()
+            require('chatgpt').setup({})
+        end,
+        dependencies = {
+            'MunifTanjim/nui.nvim',
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope.nvim'
+        }
+  }
+
+},
+
+--Options for Lazyvim
+{    dev = {
+    path = "~/projects/nvim",
+    fallback = false, -- Fallback to git when local plugin doesn't exist
+  },
+
 })
