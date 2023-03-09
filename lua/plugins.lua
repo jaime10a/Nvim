@@ -100,11 +100,14 @@ require("lazy").setup(
             end
         },
 
+        -- SmartColumn
         {
           "m4xshen/smartcolumn.nvim",
           opts = {
             colorcolumn = "90",
-            disabled_filetypes = { "help", "text", "markdown" },
+            disabled_filetypes = {
+                "help", "text", "markdown" , "mason", "lazy", "help", "NvimTree"
+            },
             scope = "file",
             }
         },
