@@ -24,8 +24,7 @@ require("lazy").setup(
             dependencies = 'romgrk/nvim-treesitter-context',
             config = function()
                 require 'nvim-treesitter.configs'.setup {
-                    -- TODO Uncommented because of errors should un-uncomment and try again
-                    ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
+                    ensure_installed = "all",
                     highlight = {
                         enable = true, -- false will disable the whole extension
                     },
@@ -77,10 +76,6 @@ require("lazy").setup(
         },
 
 
-        --Snippets vsnip
-        "hrsh7th/cmp-vsnip",
-        "hrsh7th/vim-vsnip",
-
         -- nvim-cmp
         {
             "hrsh7th/nvim-cmp",
@@ -89,6 +84,8 @@ require("lazy").setup(
             "hrsh7th/cmp-nvim-lua",
             "hrsh7th/cmp-path",
             "hrsh7th/cmp-cmdline",
+            "hrsh7th/cmp-vsnip",
+            "hrsh7th/vim-vsnip",
         },
 
         --AutoPairs
@@ -103,8 +100,19 @@ require("lazy").setup(
             end
         },
 
+        {
+          "m4xshen/smartcolumn.nvim",
+          opts = {
+            colorcolumn = "90",
+            disabled_filetypes = { "help", "text", "markdown" },
+            scope = "file",
+            }
+        },
+
         --Tree
-        --TODO: make it quit on open. quit_on_open option doesnt work. It is being migrated to an option in lua
+        --TODO: make it quit on open.
+        --Quit_on_open option doesnt work.
+        --It is being migrated to an option in lua
         {
             'kyazdani42/nvim-tree.lua',
             dependencies = 'kyazdani42/nvim-web-devicons',
@@ -162,14 +170,39 @@ require("lazy").setup(
             end
         },
 
-        --Github Copilot
-        -- "github/copilot.vim",
-
         --Github Copilot with lua
         {
             "zbirenbaum/copilot.lua",
             config = function()
-                require 'copilot'.setup()
+                require('copilot').setup({
+                    panel = {
+                        auto_refresh = false,
+                        keymap = {
+                            jump_prev = "<C-p>",
+                            jump_next = "<C-n>",
+                            accept = "<CR>",
+                            refresh = "<C-r>",
+                            open = "<C-o>",
+                        },
+                        layout = {
+                            position = "bottom",
+                            ratio = 0.3,
+                        }
+                    },
+                    suggestion = {
+                        enabled = true,
+                        auto_trigger = true,
+                        debounce = 75,
+                        keymap = {
+                          accept = "<C-y>",
+                          accept_word = false,
+                          accept_line = false,
+                          next = "<C-i>",
+                          prev = false,
+                          dismiss = false,
+                        }
+                    }
+            })
             end
         },
 

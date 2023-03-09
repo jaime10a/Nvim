@@ -10,7 +10,7 @@ o.numberwidth = 4
 
 --Layout
 o.showtabline = 1
-o.colorcolumn = '80'
+-- o.colorcolumn = '100'
 
 --Clipboard works with system
 o.clipboard = "unnamedplus"

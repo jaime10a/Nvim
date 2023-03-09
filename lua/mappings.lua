@@ -80,3 +80,7 @@ mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 --CodeGPT (ChatGPT)
 mapper('n', '<leader>c', ':Chat ')
 mapper('v', '<leader>c', ':Chat ')
+
+--Copilot
+mapper('n', '<leader>pt', ':Copilot toggle<CR>')
+mapper('n', '<leader>pp', ':Copilot panel<CR>')
