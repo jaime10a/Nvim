@@ -164,6 +164,24 @@ require("lazy").setup(
         --LazyGit
         'kdheepak/lazygit.nvim',
 
+        --Neogit
+        {
+            'TimUntersberger/neogit',
+            dependencies = {
+                'nvim-lua/plenary.nvim',
+                'sindrets/diffview.nvim',
+            },
+            config = function()
+                require('neogit').setup {
+                    integrations = {
+                        diffview = true
+                    }
+                }
+            end
+        },
+
+
+
         --Startify Alpha-vim
         {
             'goolord/alpha-nvim',
