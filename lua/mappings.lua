@@ -64,8 +64,12 @@ mapper('n', '<leader>j', ':HopWord<CR>')
 -- Tree
 mapper('n', '<leader>t', ':NvimTreeToggle<CR>')
 
--- LazyGIT
-mapper('n', '<leader>gg', ':LazyGit<CR>')
+-- Neogit
+mapper('n', '<leader>gg', ':Neogit<CR>')
+
+-- Diffview
+mapper('n', '<leader>gd', ':DiffviewOpen<CR>')
+mapper('n', '<leader>gq', ':DiffviewClose<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
