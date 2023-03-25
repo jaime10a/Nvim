@@ -87,4 +87,5 @@ mapper('v', '<leader>c', ':Chat ')
 
 --Copilot
 mapper('n', '<leader>pt', ':Copilot toggle<CR>')
+mapper('n', '<leader>pd', ':Copilot disable<CR>')
 mapper('n', '<leader>pp', ':Copilot panel<CR>')
