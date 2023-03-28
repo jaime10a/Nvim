@@ -51,7 +51,8 @@ mapper('n', '<leader>gf', ':edit<cfile><CR>')
 
 -- Telescope
 mapper('n', ';g', ':Telescope live_grep<CR>')
-mapper('n', ';f', ':Telescope find_files<CR>')
+-- mapper('n', ';f', ':Telescope find_files<CR>')
+mapper('n', ';f', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,-u,--glob,!**/.git/*,--glob,!**/node_modules/*<CR>')
 mapper('n', ';b', ':Telescope buffers<CR>')
 mapper('n', ';s', ':Telescope git_status<CR>')
 mapper('n', ';p', ':Telescope projects<CR>')
