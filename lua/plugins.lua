@@ -234,9 +234,6 @@ require("lazy").setup(
         --Latex Support
         'lervag/vimtex',
 
-        --Svelte Support
-        'leafOfTree/vim-svelte-plugin',
-
         --Whichkey
         {
             "folke/which-key.nvim",
