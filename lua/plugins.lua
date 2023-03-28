@@ -229,14 +229,15 @@ require("lazy").setup(
         },
 
         --Mason package manager
-        { "williamboman/mason.nvim" },
-        -- require('mason').setup()
+        'williamboman/mason.nvim',
 
         --Latex Support
         'lervag/vimtex',
 
+        --Svelte Support
+        'leafOfTree/vim-svelte-plugin',
+
         --Whichkey
-        -- Lua
         {
             "folke/which-key.nvim",
             config = function()
