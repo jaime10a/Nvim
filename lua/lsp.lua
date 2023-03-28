@@ -17,3 +17,5 @@ require'lspconfig'.gopls.setup{}
 require'lspconfig'.lua_ls.setup{}
 
 require'lspconfig'.svelte.setup{}
+
+require'lspconfig'.tsserver.setup{}
