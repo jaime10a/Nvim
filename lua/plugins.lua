@@ -102,13 +102,13 @@ require("lazy").setup(
 
         -- SmartColumn
         {
-          "m4xshen/smartcolumn.nvim",
-          opts = {
-            colorcolumn = "90",
-            disabled_filetypes = {
-                "help", "text", "markdown" , "mason", "lazy", "help", "NvimTree"
-            },
-            scope = "file",
+            "m4xshen/smartcolumn.nvim",
+            opts = {
+                colorcolumn = "90",
+                disabled_filetypes = {
+                    "help", "text", "markdown", "mason", "lazy", "help", "NvimTree"
+                },
+                scope = "file",
             }
         },
 
@@ -216,15 +216,15 @@ require("lazy").setup(
                         auto_trigger = true,
                         debounce = 75,
                         keymap = {
-                          accept = "<C-y>",
-                          accept_word = false,
-                          accept_line = false,
-                          next = "<C-i>",
-                          prev = false,
-                          dismiss = false,
+                            accept = "<C-y>",
+                            accept_word = false,
+                            accept_line = false,
+                            next = "<C-i>",
+                            prev = false,
+                            dismiss = false,
                         }
                     }
-            })
+                })
             end
         },
 
@@ -263,6 +263,10 @@ require("lazy").setup(
                 'nvim-lua/plenary.nvim',
                 'nvim-telescope/telescope.nvim'
             }
+        },
+        {
+            "folke/trouble.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
         }
 
     },
