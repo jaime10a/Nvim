@@ -17,9 +17,9 @@ end
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ","
 
--- Better scrolling
-mapper('n', '<C-u>', '<C-u>zz')
-mapper('n', '<C-d>', '<C-d>zz')
+-- Better scrolling (Not compatible with neoscroll)
+-- mapper('n', '<C-u>', '<C-u>zz')
+-- mapper('n', '<C-d>', '<C-d>zz')
 
 --  Toggle Numbers
 mapper('n', '<leader>n', ':set rnu!<CR>')

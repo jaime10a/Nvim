@@ -266,7 +266,18 @@ require("lazy").setup(
         },
         {
             "folke/trouble.nvim",
-        }
+        },
+        --Neoscroll
+        {
+            'karb94/neoscroll.nvim',
+            config = function()
+                require('neoscroll').setup({
+                    hide_cursor = false,          -- Hide cursor while scrolling
+                    easing_function = "quadratic",       -- Default easing function
+                })
+            end
+        },
+
 
     },
 
