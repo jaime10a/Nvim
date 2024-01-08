@@ -277,6 +277,13 @@ require("lazy").setup(
                 })
             end
         },
+        --Fidget.nvim (Notifications for LSP)
+        {
+            'j-hui/fidget.nvim',
+            config = function()
+                require('fidget').setup()
+            end
+        },
 
 
     },
