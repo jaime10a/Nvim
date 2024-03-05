@@ -82,7 +82,7 @@ mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
 mapper('n','gD',':lua require("telescope.builtin").lsp_declarations()<CR>')
 mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
 mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
-mapper('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
+mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
 mapper('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
