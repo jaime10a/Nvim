@@ -18,16 +18,21 @@ require("lazy").setup(
 
         --Treesitter
         {
-            "nvim-treesitter/nvim-treesitter",
-            build = ":TSUpdate",
-            dependencies = "romgrk/nvim-treesitter-context",
+            'nvim-treesitter/nvim-treesitter',
+            build = ':TSUpdate',
             config = function()
-                require("nvim-treesitter.configs").setup({
-                    ensure_installed = "all",
-                    highlight = {
-                        enable = true, -- false will disable the whole extension
-                    },
-                })
+                ---@diagnostic disable-next-line: missing-fields
+                require('nvim-treesitter.configs').setup {
+                    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'rust', 'go', 'javascript' },
+                    -- Autoinstall languages that are not installed
+                    auto_install = true,
+                    highlight = { enable = true },
+                    indent = { enable = true },
+                }
+                -- TODO find out how to be able to selct textobjects (maybe another plugin?)
+                --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+                --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
+                --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
             end,
         },
 
