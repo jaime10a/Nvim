@@ -78,10 +78,13 @@ mapper('n', '<leader>gq', ':DiffviewClose<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
-mapper('n', 'gd', ':lua vim.lsp.buf.definition()<CR>')
-mapper('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
+mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
+mapper('n','gD',':lua require("telescope.builtin").lsp_declarations()<CR>')
+mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
+mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
 mapper('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
+mapper('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
 --Diagnostic TODO use folke plugin for this trouble.nvim
 mapper('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>')
