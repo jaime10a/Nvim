@@ -52,14 +52,6 @@ require("lazy").setup(
             end,
         },
 
-        --Leap
-        {
-            "ggandor/leap.nvim",
-            config = function()
-                require("leap").set_default_keymaps()
-            end,
-        },
-
         --AutoPairs
         "windwp/nvim-autopairs",
         -- require('nvim-autopairs').setup{}
