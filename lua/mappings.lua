@@ -45,6 +45,10 @@ mapper('n', '<C-Down>', ':resize +2<CR>')
 mapper('n', '<C-Left>', ':vertical resize -2<CR>')
 mapper('n', '<C-Right>', ':vertical resize +2<CR>')
 
+-- Move lines in visual mode
+mapper('v', 'J', ':m \'>+1<CR>gv=gv')
+mapper('v', 'K', ':m \'<-2<CR>gv=gv')
+
 --Quick Replace / Substitute
 mapper('n', '<C-S>', ':%s/')
 
