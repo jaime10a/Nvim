@@ -23,18 +23,39 @@ require("lazy").setup(
             config = function()
                 ---@diagnostic disable-next-line: missing-fields
                 require('nvim-treesitter.configs').setup {
-                    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'rust', 'go', 'javascript' },
+                    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'rust', 'go',
+                        'javascript' },
                     -- Autoinstall languages that are not installed
                     auto_install = true,
                     highlight = { enable = true },
                     indent = { enable = true },
+
+                    textobjects = {
+                        select = {
+                            enable = true,
+                            lookahead = true,
+                            keymaps = {
+                                ["af"] = "@function.outer",
+                                ["if"] = "@function.inner",
+                                ["ac"] = "@class.outer",
+                                ["ic"] = "@class.inner",
+                            },
+                        },
+                        swap = {
+                            enable = true,
+                            swap_next = {
+                                ["<leader>a"] = "@parameter.inner",
+                            },
+                            swap_previous = {
+                                ["<leader>A"] = "@parameter.inner",
+                            },
+                        },
+                    },
                 }
-                -- TODO find out how to be able to selct textobjects (maybe another plugin?)
-                --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
-                --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
-                --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
             end,
         },
+        --Textobjects
+        "nvim-treesitter/nvim-treesitter-textobjects",
 
         --Telescope
         "nvim-lua/plenary.nvim",
