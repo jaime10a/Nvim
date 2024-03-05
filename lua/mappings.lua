@@ -83,7 +83,9 @@ mapper('n', 'gD', ':lua vim.lsp.buf.declaration()<CR>')
 mapper('n', 'ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
 
---Diagnostic
+--Diagnostic TODO use folke plugin for this trouble.nvim
+mapper('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>')
+mapper('n', ']d', ':lua vim.diagnostic.goto_next()<CR>')
 mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 
 --CodeGPT (ChatGPT)

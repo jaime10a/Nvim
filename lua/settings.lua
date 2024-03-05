@@ -32,6 +32,8 @@ o.splitright = true
 
 --Wrapping off
 o.wrap = false
+--when wrapping next line starts at indent
+o.breakindent = true
 
 --Lines above and below the cursor
 o.scrolloff = 10
