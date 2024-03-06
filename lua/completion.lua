@@ -34,8 +34,8 @@ return {
             mapping = cmp.mapping.preset.insert({
                 ["<C-n>"] = cmp.mapping.select_next_item(),
                 ["<C-p>"] = cmp.mapping.select_prev_item(),
-                -- ["<C-y>"] = cmp.mapping.confirm({ select = true }),
-                ["<CR>"] = cmp.mapping.confirm({ select = true }),         -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+                ["<C-y>"] = cmp.mapping.confirm({ select = true }),
+                -- ["<CR>"] = cmp.mapping.confirm({ select = true }),
                 ["<C-Space>"] = cmp.mapping.complete({}),
                 -- ["<C-u>"] = cmp.mapping.scroll_docs(-4),
                 -- ["<C-d>"] = cmp.mapping.scroll_docs(4),
@@ -46,9 +46,9 @@ return {
                 --  function $name($args)
                 --    $body
                 --  end
-                -- TODO this mapping has to change
                 -- <c-l> will move you to the right of each of the expansion locations.
                 -- <c-h> is similar, except moving you backwards.
+                -- TODO: this mapping has to change/ not working
                 ["<C-d>"] = cmp.mapping(function()
                     if luasnip.expand_or_locally_jumpable() then
                         luasnip.expand_or_jump()
