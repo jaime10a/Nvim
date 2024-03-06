@@ -35,7 +35,7 @@ require("lazy").setup(
                         keymaps = {
                             node_incremental = "v",
                             node_decremental = "V",
-                        }
+                            }
                     },
 
                     textobjects = {
@@ -160,7 +160,12 @@ require("lazy").setup(
                         enable = true,
                         update_cwd = true,
                     },
-                })
+                   --use this option somehow:     *nvim-tree.actions.open_file.quit_on_open* 
+            actions = {
+                open_file = {
+                    quit_on_open = true,
+                },
+                }})
             end,
         },
 
