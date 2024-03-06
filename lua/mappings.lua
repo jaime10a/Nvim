@@ -3,16 +3,6 @@ local mapper = function(mode, key, result)
   vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true, expr = false })
 end
 
--- Expressive Mapping helper
-local expressive_mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, { silent = true, expr = true })
-end
-
--- Default Mapping helper
-local plug_mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, {})
-end
-
 -- Define Mapleader
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ","
@@ -65,7 +55,10 @@ mapper('n', ';b', ':Telescope buffers<CR>')
 mapper('n', ';s', ':Telescope git_status<CR>')
 mapper('n', ';p', ':Telescope projects<CR>')
 mapper('n', ';t', ':Telescope<CR>')
-mapper('n', ';c', ':Telescope cheat fd<CR>')
+mapper('n', ';h', ':Telescope help_tags<CR>')
+
+-- Use Tab to alternate between buffers <C-^>
+mapper('n', '<Tab>', '<C-^>')
 
 -- Hop
 mapper('n', '<leader>j', ':HopWord<CR>')
@@ -77,8 +70,8 @@ mapper('n', '<leader>t', ':NvimTreeToggle<CR>')
 mapper('n', '<leader>gg', ':Neogit<CR>')
 
 -- Diffview
-mapper('n', '<leader>gd', ':DiffviewOpen<CR>')
-mapper('n', '<leader>gq', ':DiffviewClose<CR>')
+mapper('n', '<leader>dd', ':DiffviewOpen<CR>')
+mapper('n', '<leader>dq', ':DiffviewClose<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
