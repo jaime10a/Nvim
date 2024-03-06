@@ -33,9 +33,8 @@ require("lazy").setup(
                     incremental_selection = {
                         enable = true,
                         keymaps = {
-                            init_selection = "<CR>",
-                            node_incremental = "<CR>",
-                            node_decremental = "<BS>",
+                            node_incremental = "v",
+                            node_decremental = "V",
                         }
                     },
 
