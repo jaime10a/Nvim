@@ -57,7 +57,7 @@ mapper('n', '<leader>gf', ':edit<cfile><CR>')
 
 -- Plugins Mappings ↓
 
--- Telescope
+-- Telescope TODO: ; is used to repeat last search. also for [m (with treesitter-text-objects). Look for something else
 mapper('n', ';g', ':Telescope live_grep<CR>')
 -- mapper('n', ';f', ':Telescope find_files<CR>')
 mapper('n', ';f', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,-u,--glob,!**/.git/*,--glob,!**/node_modules/*<CR>')
