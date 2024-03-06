@@ -98,6 +98,13 @@ require("lazy").setup(
             end,
         },
 
+        {
+            "folke/trouble.nvim",
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+            opts = {
+                auto_close = true,
+            },
+        },
 
         -- Highlight todo, notes, etc in comments
         {

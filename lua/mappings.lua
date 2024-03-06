@@ -86,15 +86,21 @@ mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
 mapper('n','gD',':lua require("telescope.builtin").lsp_declarations()<CR>')
 mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
-mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
+-- mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
+mapper('n', 'gr', ':TroubleToggle lsp_references<CR>')
 mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
 mapper('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
---Diagnostic TODO use folke plugin for this trouble.nvim
+-- Trouble.nvim / Diagnostics
+mapper('n', '<leader>xx', ':Trouble workspace_diagnostics<CR>')
+mapper('n', '<leader>xd', ':Trouble document_diagnostics<CR>')
+mapper('n', '<leader>xt', ':Trouble todo<CR>')
+mapper('n', '<leader>X', ':TroubleClose<CR>')
+
+mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 mapper('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>')
 mapper('n', ']d', ':lua vim.diagnostic.goto_next()<CR>')
-mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 
 --CodeGPT (ChatGPT)
 mapper('n', '<leader>c', ':Chat ')
