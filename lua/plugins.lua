@@ -35,7 +35,7 @@ require("lazy").setup(
                         keymaps = {
                             node_incremental = "v",
                             node_decremental = "V",
-                            }
+                        }
                     },
 
                     textobjects = {
@@ -147,9 +147,6 @@ require("lazy").setup(
         },
 
         --Tree
-        --TODO: make it quit on open.
-        --Quit_on_open option doesnt work.
-        --It is being migrated to an option in lua
         {
             "kyazdani42/nvim-tree.lua",
             dependencies = "kyazdani42/nvim-web-devicons",
@@ -160,12 +157,13 @@ require("lazy").setup(
                         enable = true,
                         update_cwd = true,
                     },
-                   --use this option somehow:     *nvim-tree.actions.open_file.quit_on_open* 
-            actions = {
-                open_file = {
-                    quit_on_open = true,
-                },
-                }})
+                    --use this option somehow:     *nvim-tree.actions.open_file.quit_on_open*
+                    actions = {
+                        open_file = {
+                            quit_on_open = true,
+                        },
+                    }
+                })
             end,
         },
 
