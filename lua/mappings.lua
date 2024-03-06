@@ -81,10 +81,6 @@ mapper('n', '<leader>t', ':NvimTreeToggle<CR>')
 -- Neogit
 mapper('n', '<leader>gg', ':Neogit<CR>')
 
--- Diffview
-mapper('n', '<leader>dd', ':DiffviewOpen<CR>')
-mapper('n', '<leader>dq', ':DiffviewClose<CR>')
-
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
