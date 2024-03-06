@@ -234,12 +234,14 @@ require("lazy").setup(
             end,
         },
 
+        --TODO: https://github.com/CopilotC-Nvim/CopilotChat.nvim
         --Github Copilot with lua
         {
             "zbirenbaum/copilot.lua",
             config = function()
                 require("copilot").setup({
                     panel = {
+                        enabled = true,
                         auto_refresh = false,
                         keymap = {
                             jump_prev = "<C-p>",
@@ -253,19 +255,19 @@ require("lazy").setup(
                             ratio = 0.3,
                         },
                     },
-                    suggestion = {
-                        enabled = true,
-                        auto_trigger = true,
-                        debounce = 75,
-                        keymap = {
-                            accept = "<C-y>",
-                            accept_word = false,
-                            accept_line = false,
-                            next = "<C-i>",
-                            prev = false,
-                            dismiss = false,
+                        suggestion = {
+                            enabled = true,
+                            auto_trigger = true,
+                            debounce = 75,
+                            keymap = {
+                                accept = "<C-f>",
+                                accept_word = false,
+                                accept_line = false,
+                                next = "<C-g>",
+                                prev = false,
+                                dismiss = false,
+                            },
                         },
-                    },
                 })
             end,
         },

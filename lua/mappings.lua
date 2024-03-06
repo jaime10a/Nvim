@@ -89,7 +89,7 @@ mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
 -- mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
 mapper('n', 'gr', ':TroubleToggle lsp_references<CR>')
 mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
-mapper('n', 'ff', ':lua vim.lsp.buf.format()<CR>')
+mapper('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>')
 mapper('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
 
 -- Trouble.nvim / Diagnostics
@@ -110,3 +110,4 @@ mapper('v', '<leader>c', ':Chat ')
 mapper('n', '<leader>pt', ':Copilot toggle<CR>')
 mapper('n', '<leader>pd', ':Copilot disable<CR>')
 mapper('n', '<leader>pp', ':Copilot panel<CR>')
+mapper('n', '<leader>ts', ':lua require("copilot.suggestion").toggle_auto_trigger()<CR>')
