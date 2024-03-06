@@ -10,9 +10,21 @@ vim.g.maplocalleader = ","
 -- Better scrolling (Not compatible with neoscroll)
 -- mapper('n', '<C-u>', '<C-u>zz')
 -- mapper('n', '<C-d>', '<C-d>zz')
+-- mapper('n', ',', '<C-u>zz')
+-- mapper('n', 'm', '<C-d>zz') -- Marks no longer available
+mapper('n', ',', ':lua require("neoscroll").scroll(-vim.wo.scroll, true, 350)<CR>')
+mapper('n', 'm', ':lua require("neoscroll").scroll(vim.wo.scroll, true, 350)<CR>')
+
 
 --  Toggle Numbers
 mapper('n', '<leader>n', ':set rnu!<CR>')
+
+-- Lateral Movement
+mapper('n', 'H', '^')
+mapper('n', 'L', '$')
+
+-- Comment and duplicate
+mapper('v', 'gcp', 'y`>pgv:norm gcc<CR>`>j^')
 
 -- use ESC to turn off search highlighting
 mapper('n', '<Esc>', ':noh<CR>')
@@ -58,7 +70,7 @@ mapper('n', ';t', ':Telescope<CR>')
 mapper('n', ';h', ':Telescope help_tags<CR>')
 
 -- Use Tab to alternate between buffers <C-^>
-mapper('n', '<Tab>', '<C-^>')
+mapper('n', '<Tab>', '<C-^>\'"zz ')
 
 -- Hop
 mapper('n', '<leader>j', ':HopWord<CR>')
