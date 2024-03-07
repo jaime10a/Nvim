@@ -23,8 +23,10 @@ require("lazy").setup(
             config = function()
                 ---@diagnostic disable-next-line: missing-fields
                 require('nvim-treesitter.configs').setup {
-                    ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'rust', 'go',
-                        'javascript' },
+                    ensure_installed = {
+                        'bash', 'c', 'html', 'lua', 'markdown',
+                        'vim', 'vimdoc', 'rust', 'go', 'javascript'
+                    },
                     -- Autoinstall languages that are not installed
                     auto_install = true,
                     highlight = { enable = true },
@@ -164,7 +166,6 @@ require("lazy").setup(
                         enable = true,
                         update_cwd = true,
                     },
-                    --use this option somehow:     *nvim-tree.actions.open_file.quit_on_open*
                     actions = {
                         open_file = {
                             quit_on_open = true,
@@ -255,19 +256,19 @@ require("lazy").setup(
                             ratio = 0.3,
                         },
                     },
-                        suggestion = {
-                            enabled = true,
-                            auto_trigger = true,
-                            debounce = 75,
-                            keymap = {
-                                accept = "<C-f>",
-                                accept_word = false,
-                                accept_line = false,
-                                next = "<C-g>",
-                                prev = false,
-                                dismiss = false,
-                            },
+                    suggestion = {
+                        enabled = true,
+                        auto_trigger = true,
+                        debounce = 75,
+                        keymap = {
+                            accept = "<C-f>",
+                            accept_word = false,
+                            accept_line = false,
+                            next = "<C-g>",
+                            prev = false,
+                            dismiss = false,
                         },
+                    },
                 })
             end,
         },

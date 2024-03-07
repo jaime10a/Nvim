@@ -5,7 +5,7 @@
 -- catppuccin
 require("catppuccin").setup({
     flavour = "mocha", -- latte, frappe, macchiato, mocha
-    background = { -- :h background
+    background = {     -- :h background
         light = "latte",
         dark = "mocha",
     },
@@ -37,8 +37,8 @@ vim.cmd.colorscheme "catppuccin"
 
 --LuaLine Config
 require('lualine').setup {
-  options = {
-    theme = 'catppuccin',
-    extensions = {'nvim-tree'}
-  }
+    options = {
+        theme = 'catppuccin',
+        extensions = { 'nvim-tree' }
+    }
 }

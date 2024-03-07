@@ -1,7 +1,7 @@
 local o = vim.o  -- For the globals options :set
 local w = vim.wo -- For the window local options
 local b = vim.bo -- For the buffer local options
-local g = vim.g -- For the buffer global options
+local g = vim.g  -- For the buffer global options
 
 --Side Numbers
 o.relativenumber = true
@@ -39,15 +39,15 @@ o.breakindent = true
 o.scrolloff = 10
 
 --Mouse also works
-o.mouse ='a'
+o.mouse = 'a'
 
 -- Highlight when yanking
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = 'Highlight when yanking (copying) text',
+    group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
 
 --Dont see -Insert

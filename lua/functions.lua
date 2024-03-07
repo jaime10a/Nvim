@@ -17,4 +17,4 @@ local function word_count(opts)
 end
 
 -- Define the command 'WordCount' that accepts an optional range
-vim.api.nvim_create_user_command('WordCount', word_count, {range = "%"})
+vim.api.nvim_create_user_command('WordCount', word_count, { range = "%" })

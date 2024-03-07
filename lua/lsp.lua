@@ -68,7 +68,7 @@ return { -- LSP Configuration & Plugins
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format lua code
             "pyright",
-            "yapf", -- Python formatter
+            "yapf",   -- Python formatter
             "rust-analyzer",
             "gopls",
         })
