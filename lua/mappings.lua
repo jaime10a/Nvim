@@ -15,6 +15,20 @@ vim.g.maplocalleader = ","
 mapper('n', ',', ':lua require("neoscroll").scroll(-vim.wo.scroll, true, 350)<CR>')
 mapper('n', 'm', ':lua require("neoscroll").scroll(vim.wo.scroll, true, 350)<CR>')
 
+--Center buffer on cursor while navigating
+mapper('n', '{', '{zz')
+mapper('n', '}', '}zz')
+mapper('n', 'N', 'Nzz')
+mapper('n', 'n', 'nzz')
+mapper('n', '<C-i>', '<C-i>zz')
+mapper('n', '<C-o>', '<C-o>zz')
+mapper('n', '*', '*zz')
+mapper('n', '#', '#zz')
+mapper('n', ']m', ']mzz')
+mapper('n', '[m', '[mzz')
+
+-- Capital U to redo
+mapper('n', 'U', '<C-r>')
 
 --  Toggle Numbers
 mapper('n', '<leader>n', ':set rnu!<CR>')
