@@ -175,6 +175,15 @@ require("lazy").setup(
             end,
         },
 
+        --Oil.nvim
+        {
+            'stevearc/oil.nvim',
+            opts = {
+                default_file_explorer = true,
+            },
+            dependencies = { "nvim-tree/nvim-web-devicons" },
+        },
+
         --Theme Nightfox
         "EdenEast/nightfox.nvim",
 
@@ -321,6 +330,27 @@ require("lazy").setup(
                 })
             end,
         },
+
+        -- TODO: doesnt work
+        --
+        -- Use this mapper
+        -- mapper('n', '<leader>f', ':lua require("conform").format()<CR>')
+        --
+        -- --Formatting
+        -- 'stevearc/conform.nvim',
+        -- opts = {
+        --     notify_on_error = true,
+        --     format_on_save = {
+        --             timeout_ms   = 300,
+        --         lsp_fallback = true,
+        --     },
+        --     formatters_by_ft = {
+        --         lua = { 'stylua' },
+        --         -- Conform can also run multiple formatters sequentially
+        --         python = {  "black" },
+        --         go = { "gofmt", "goimports" },
+        --     },
+        -- },
 
         --LSP config (in separate file)
         require("lsp"),

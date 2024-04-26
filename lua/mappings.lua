@@ -92,6 +92,9 @@ mapper('n', '<leader>j', ':HopWord<CR>')
 -- Tree
 mapper('n', '<leader>t', ':NvimTreeToggle<CR>')
 
+-- Oil
+mapper('n', '-', ':Oil<CR>')
+
 -- Neogit
 mapper('n', '<leader>gg', ':Neogit<CR>')
 
@@ -100,8 +103,8 @@ mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
 mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
 mapper('n','gD',':lua require("telescope.builtin").lsp_declarations()<CR>')
 mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
--- mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
-mapper('n', 'gr', ':TroubleToggle lsp_references<CR>')
+mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
+-- mapper('n', 'gr', ':TroubleToggle lsp_references<CR>')
 mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>')
 mapper('n', '<leader>r', ':lua vim.lsp.buf.rename()<CR>')
