@@ -119,10 +119,6 @@ mapper('n', '<leader>d', ':lua vim.diagnostic.open_float()<CR>')
 mapper('n', '[d', ':lua vim.diagnostic.goto_prev()<CR>')
 mapper('n', ']d', ':lua vim.diagnostic.goto_next()<CR>')
 
---CodeGPT (ChatGPT)
-mapper('n', '<leader>c', ':Chat ')
-mapper('v', '<leader>c', ':Chat ')
-
 --Copilot
 mapper('n', '<leader>pt', ':Copilot toggle<CR>')
 mapper('n', '<leader>pd', ':Copilot disable<CR>')

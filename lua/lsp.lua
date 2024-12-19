@@ -30,9 +30,15 @@ return { -- LSP Configuration & Plugins
         capabilities =
             vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
+        -- Templ requires this to load
+        vim.filetype.add({ extension = { templ = "templ" } })
+
         local servers = {
             clangd = {},
             gopls = {},
+            templ = {
+                filetypes = { "templ" },
+            },
             pyright = {},
             rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -71,6 +77,7 @@ return { -- LSP Configuration & Plugins
             "yapf",   -- Python formatter
             "rust-analyzer",
             "gopls",
+            "templ",
         })
         require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
