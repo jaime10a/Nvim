@@ -27,8 +27,9 @@ return { -- LSP Configuration & Plugins
         })
 
         local capabilities = vim.lsp.protocol.make_client_capabilities()
-        capabilities =
-            vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
+        -- not needed after change to blink.cmp
+        -- capabilities =
+        --     vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
         -- Templ requires this to load
         vim.filetype.add({ extension = { templ = "templ" } })
