@@ -40,7 +40,8 @@ return { -- LSP Configuration & Plugins
             templ = {
                 filetypes = { "templ" },
             },
-            pyright = {},
+            ruff = {},
+            pylsp = {},
             rust_analyzer = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             lua_ls = {
@@ -71,18 +72,16 @@ return { -- LSP Configuration & Plugins
 
         require("mason").setup()
 
-        local ensure_installed = vim.tbl_keys(servers or {})
-        vim.list_extend(ensure_installed, {
-            "stylua", -- Used to format lua code
-            "pyright",
-            "yapf",   -- Python formatter
-            "rust-analyzer",
-            "gopls",
-            "templ",
-        })
-        require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
-
         require("mason-lspconfig").setup({
+            ensure_installed = {
+                "clangd",
+                "gopls",
+                "ruff",
+                "pylsp",
+                "rust_analyzer",
+                "lua_ls",
+            },
+            automatic_installation = true,
             handlers = {
                 function(server_name)
                     local server = servers[server_name] or {}
