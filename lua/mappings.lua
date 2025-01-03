@@ -1,6 +1,6 @@
 -- Mapping helper
 local mapper = function(mode, key, result)
-  vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true, expr = false })
+    vim.api.nvim_set_keymap(mode, key, result, { noremap = true, silent = true, expr = false })
 end
 
 -- Define Mapleader
@@ -73,15 +73,17 @@ mapper('n', '<leader>gf', ':edit<cfile><CR>')
 
 -- Plugins Mappings ↓
 
--- Telescope TODO: ; is used to repeat last search. also for [m (with treesitter-text-objects). Look for something else
-mapper('n', ';g', ':Telescope live_grep<CR>')
--- mapper('n', ';f', ':Telescope find_files<CR>')
-mapper('n', ';f', ':Telescope find_files find_command=rg,--ignore,--hidden,--files,-u,--glob,!**/.git/*,--glob,!**/node_modules/*<CR>')
-mapper('n', ';b', ':Telescope buffers<CR>')
-mapper('n', ';s', ':Telescope git_status<CR>')
-mapper('n', ';p', ':Telescope projects<CR>')
-mapper('n', ';t', ':Telescope<CR>')
-mapper('n', ';h', ':Telescope help_tags<CR>')
+--Fzf-lua TODO: ; is used to repeat last search. also for [m (with treesitter-text-objects). Look for something else
+mapper('n', ';f', ':lua require("fzf-lua").files()<CR>')
+mapper('n', ';g', ':lua require("fzf-lua").live_grep()<CR>')
+mapper('n', ';G', ':lua require("fzf-lua").live_grep_resume()<CR>')
+mapper('n', ';b', ':lua require("fzf-lua").buffers()<CR>')
+mapper('n', ';h', ':lua require("fzf-lua").help_tags()<CR>')
+mapper('n', ';o', ':lua require("fzf-lua").oldfiles()<CR>')
+mapper('n', ';q', ':lua require("fzf-lua").quickfix()<CR>')
+mapper('n', ';l', ':lua require("fzf-lua").loclist()<CR>')
+mapper('n', ';p', ':lua require("fzf-lua").complete_path()<CR>')
+mapper('n', ';z', ':FzfLua ')
 
 -- Use Tab to alternate between buffers <C-^>
 mapper('n', '<Tab>', '<C-^>\'"zz ')
@@ -100,10 +102,10 @@ mapper('n', '<leader>gg', ':Neogit<CR>')
 
 --LSP
 mapper('n', 'K', ':lua vim.lsp.buf.hover()<CR>')
-mapper('n','gd',':lua require("telescope.builtin").lsp_definitions()<CR>')
-mapper('n','gD',':lua require("telescope.builtin").lsp_declarations()<CR>')
-mapper('n','gi',':lua require("telescope.builtin").lsp_implementations()<CR>')
-mapper('n', 'gr', ':lua require("telescope.builtin").lsp_references()<CR>')
+mapper('n', 'gd', ':lua require("fzf-lua").lsp_definitions()<CR>')
+mapper('n', 'gD', ':lua require("fzf-lua").lsp_declarations()<CR>')
+mapper('n', 'gi', ':lua require("fzf-lua").lsp_implementations()<CR>')
+mapper('n', 'gr', ':lua require("fzf-lua").lsp_references()<CR>')
 -- mapper('n', 'gr', ':TroubleToggle lsp_references<CR>')
 mapper('n', '<leader>ca', ':lua vim.lsp.buf.code_action()<CR>')
 mapper('n', '<leader>f', ':lua vim.lsp.buf.format()<CR>')

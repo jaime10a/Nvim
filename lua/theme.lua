@@ -23,11 +23,12 @@ require("catppuccin").setup({
         cmp = true,
         gitsigns = true,
         nvimtree = true,
-        telescope = true,
         treesitter = true,
         hop = true,
         mason = true,
         neogit = true,
+        blink_cmp = true,
+        fzf = true,
         -- For more (https://github.com/catppuccin/nvim#integrations)
     },
 })
