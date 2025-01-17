@@ -42,6 +42,7 @@ return { -- LSP Configuration & Plugins
             ruff = {},
             pylsp = {},
             rust_analyzer = {},
+            zls = {},
             -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
             lua_ls = {
                 -- cmd = {...},
@@ -79,6 +80,7 @@ return { -- LSP Configuration & Plugins
                 "pylsp",
                 "rust_analyzer",
                 "lua_ls",
+                "zls",
             },
             automatic_installation = true,
             handlers = {
